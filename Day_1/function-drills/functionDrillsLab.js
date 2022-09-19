@@ -10,10 +10,10 @@
   Create a function called helloWorld which simply console logs 'Hello, World!'
   Call the function.
 */
-let helloWorld = ("Hello, World!")
-function(helloWorld) => { 
-  return console.log(helloWorld);
-}
+
+function helloWorld(message) { 
+console.log(message);
+} helloWorld("Hello, World!");
 
 
 ////////////////// PROBLEM 2 ////////////////////
@@ -21,8 +21,10 @@ function(helloWorld) => {
 /*
     Write an arrow function called 'jsNinja' that returns the string: 'I am a JavaScript ninja!'
 */
-
-//CODE HERE
+jsNinja = () => {
+  return 'I am a JavaScript ninja!'
+}
+console.log(jsNinja());
 
 
 ////////////////// PROBLEM 3 ////////////////////
@@ -31,9 +33,16 @@ function(helloWorld) => {
   Ex. If 'Cameron' were passed in as the argument, Cameron would be console logged.
   Call the function, passing in an argument.
 */
+/*
+  Create a function called printName which takes in a person's name and console logs it.
+  Ex. If 'Cameron' were passed in as the argument, Cameron would be console logged.
+  Call the function, passing in an argument.
+*/
 
-//CODE HERE
-
+function printName(name) {
+  console.log('My name is',name);
+}
+printName("Collin");
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -45,7 +54,10 @@ function(helloWorld) => {
   Make sure to call your function and pass in an argument.
 */
 
-//CODE HERE
+function greeting(name)  {
+  console.log('Hello,',name);
+}
+greeting('Collin');
 
 
 ////////////////// PROBLEM 5 ////////////////////
@@ -59,8 +71,16 @@ function(helloWorld) => {
     Brownie points if you use a ternary statement (only spend significant time on this if you have wiggle room)
 */
 
-//CODE HERE
-
+const compareNums = (x, y) => {
+  if (x < y) {
+    console.log('The bigger number is', y)
+  } else if(x > y) {
+    console.log('The bigger number is', x)   
+  } else if(x = y) {
+    console.log('They are the same number,', x)
+  }
+};
+compareNums(4, 8)
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
