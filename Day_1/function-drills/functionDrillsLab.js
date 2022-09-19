@@ -90,8 +90,11 @@ compareNums(4, 8)
   Create a variable outside the function called 'sum' and set it equal to add invoked (called), passing in 2 arguments.
 */
 
-//CODE HERE
-
+const add = (x, y) => {
+  return (Number(x) + Number(y))
+}
+sum = add(2, "3")
+console.log(sum)
 
 ////////////////// PROBLEM 7 ////////////////////
 
@@ -232,8 +235,15 @@ let loser = 'Glimmer'
   The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
 */
 
-//CODE HERE
-
+function theEliminator(contestants_array, loser) {
+for(let i = 0; i < contestants_array.length; i++) {
+  if (contestants_array[i] === loser) {
+      contestants_array.splice(i,1);
+  }
+  }
+  return contestants_array;
+}
+console.log(theEliminator(contestants, loser));
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -304,13 +314,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ["duck"]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ["duck", "rubberduck"]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ["duck", "rubberduck", "sailorduck"]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ["realduck", "duck"]
