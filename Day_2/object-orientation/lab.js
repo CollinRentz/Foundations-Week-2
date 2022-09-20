@@ -110,12 +110,17 @@ console.log(`${color}`);
 */
 
 function greeting( obj ) {
-  //Code Here
-  
+  let {firstName, lastName, title} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
+let Collin = {
+  title: 'Mr.',
+  firstName: 'Collin',
+  lastName: 'Rentz',
+}
+console.log(greeting(Collin))
 
 
 
@@ -129,9 +134,24 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
-
-
+function totalPopulation(states) {
+  let {Utah, California, Texas, Arizona} = states
+return Utah + California + Texas + Arizona;
+}
+let states = {
+  Utah: 4000000,
+  California: 39000000,
+  Texas: 28000000,
+  Arizona: 7000000,
+}
+let states2 = {
+  Utah: 40,
+  California: 390,
+  Texas: 20,
+  Arizona: 70,
+}
+console.log(totalPopulation(states));
+console.log(totalPopulation(states2));
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -142,10 +162,19 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables. 
   Push these new variables to an array and return the array. 
 */
+let bacon = {
+  carb: '22g',
+  fat: '0g',
+  protein: '2g'
+}
+function ingredients(nutrition){
 
-//Code Here
+  let {carb, fat, protein} = nutrition
+  return [carb, fat, protein];
 
+}
 
+console.log(ingredients(bacon))
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -165,16 +194,17 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
-
+user.name = 'Bryan G. Smith',
+user.email = 'bryan.smith@devmounta.in'
+console.log(user)
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
-
+delete user.age
+console.log(user)
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -183,7 +213,15 @@ var user = {
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
+class Cat{
+  constructor(name, age, color){
+  this.name = name;
+  this.age = age;
+  this.color = color;
+  }
+}
+let cat1 = new Cat('Freida', 3,'brown');
+console.log(cat1.name)
 
 
 
@@ -195,8 +233,18 @@ var user = {
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
-
+class Wizard{
+  constructor(name, age, favoriteSpell){
+  this.name = name;
+  this.age = age;
+  this.favoriteSpell = favoriteSpell;
+} 
+castSpell(){
+  console.log(`${name} has cast ${favoriteSpell}`)
+}
+}
+let Wizard1 = new Wizard('Merlin', 101,'Levitate')
+console.log(Wizard.castSpell)
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
