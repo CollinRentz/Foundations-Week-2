@@ -62,16 +62,18 @@ function first(arr, callback) {
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-// CODE HERE
+function last(arr, callback) {
+  return callback(arr[arr.length - 1])
+ } 
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// last(names, lastName => {
-//   console.log('The last name in names is ' + lastName)
-// })
+ last(names, lastName => {
+   console.log('The last name in names is ' + lastName)
+    })
 
 
 
@@ -84,20 +86,21 @@ function first(arr, callback) {
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-// CODE HERE 
-
+function contains(arr, name, callback) {
+  return callback(arr.includes(name));
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// contains(names, 'Colt', result => {
-//   if(result === true){
-//     console.log('Colt is in the array')
-//   } else {
-//     console.log('Colt is not in the array')
-//   }
-// })
+contains(names, 'Colt', result => {
+  if(result === true){
+         console.log('Colt is in the array')
+   } else {
+     console.log('Colt is not in the array')
+   }
+ })
 
 
 
@@ -109,8 +112,18 @@ function first(arr, callback) {
   Hint: you can use a nested for loop to do this.
 */
 
-// CODE HERE
-
+//function uniq(arr, callback){
+ // for(i=0;i<arr.length;i++) {
+ // for(j=i+1;j<arr.length;j++) {
+ // if(arr[i]===arr[j]){
+  //arr.splice(i,1); j--; } } }
+  // return callback(arr)
+  //}
+  function uniq(arr, callFun) {
+    let set1 = new Set(arr);
+    let newArr = Array.from(set1);
+    return callFun(newArr);
+  }
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -118,7 +131,7 @@ function first(arr, callback) {
   'The new names array with all the duplicate items removed is [UNIQARRPARAM].'
 */
 
-// CODE HERE
+uniq(names,(uniqArr)=> {console.log(`The new names array with all the duplicate items removed is ${uniqArr}.`) })
 
 
 
@@ -129,7 +142,12 @@ function first(arr, callback) {
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
-// CODE HERE 
+function each(name, callback) {
+  for(let i = 0; i < name.length; i++) {
+    callback(name[i], i)
+  }
+}
+
 
 
 /*
@@ -139,8 +157,8 @@ function first(arr, callback) {
   'The item at index [INDEXPARAM] is [ITEMPARAM].'
 */
 
-// CODE HERE
-
+each(names,(item, index) => {console.log(`The item at index ${index} is ${item}.`)}
+)
 
 ////////// PROBLEM 7 //////////
 
@@ -172,7 +190,9 @@ var users = [
 ]
 // Do not edit the code above.
 
-// CODE HERE 
+function getUserById(users, id, callback) {
+
+}
 
 
 // UNCOMMENT THE FUNCTION CALL BELOW
