@@ -191,7 +191,11 @@ var users = [
 // Do not edit the code above.
 
 function getUserById(users, id, callback) {
-
+for(let i = 0; i < users.length; i++) {
+  if(id === users[i].id) {
+    return callback(users[i]);
+  }
+}
 }
 
 
@@ -199,9 +203,9 @@ function getUserById(users, id, callback) {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
+ getUserById(users, '16t', user => {
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+ })
 
 ////////// CHALLENGE //////////
 
@@ -219,8 +223,9 @@ function getUserById(users, id, callback) {
   the two parameters together and return the sum.
 */
 
-// CODE HERE
-
+function addingFactory(num) {
+  return (num2) => num + num2;
+}
 /*
   Now that you have addingFactory, you can create other
   functions from it. 
@@ -233,7 +238,7 @@ function getUserById(users, id, callback) {
   10 as an arguemnt.
 */
 
-// CODE HERE
+let addTen = addingFactory(10);
 
 /*
   Now the inner function is stored in the addTen variable! 
@@ -245,7 +250,9 @@ function getUserById(users, id, callback) {
   to see the different outputs.
 */
 
-// CODE HERE
+
+console.log(addTen(10));
+console.log(addTen(3));
 
 /*
   Let's make another function from the addingFactory. 
@@ -258,4 +265,5 @@ function getUserById(users, id, callback) {
   to add any number to your favorite number!
 */
 
-// CODE HERE
+let addNUMBER = addingFactory(8);
+console.log(addNUMBER(8));
